@@ -15,3 +15,4 @@ for  i in range(2,n):
             #b[i]=j
 print a
 print b
+#Output is not coming correct but the logic applied is fairly ok
