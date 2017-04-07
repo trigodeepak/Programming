@@ -14,4 +14,4 @@ def createSum(a,p,i):
 for i in range(1,n):
     b[i]=(a[i-1]+createSum(a,0,i))
 print b   
-#not working properly stacktrace is keep on coming    
+#not working properly stacktrace is keep on coming  https://digitalunlocked.withgoogle.com/topic/1/assessment  
