@@ -1,4 +1,4 @@
-//Program needs debugging logic is correct according to me
+//Debugging done program working fine
 #include <stdio.h>
 #include <stdlib.h>
 int max(int a,int b)
@@ -18,10 +18,10 @@ int main()
     {   for(j=0;j<m+1;j++)
         {   if(i==0||m==0)
                 c[i][j]=0;
-            else if(w[i]>j)
+            else if(w[i-1]>j)
                 c[i][j]=c[i-1][j];
-            else if(i>0&&w[i]<=j)
-                c[i][j]=max(v[i]+c[i-1],c[i-1][m]);
+            else if(i>0&&w[i-1]<=j)
+                c[i][j]=max(v[i-1]+c[i-1][j-w[i-1]],c[i-1][m]);
         }
     }
     for(i=0;i<n+1;i++)
