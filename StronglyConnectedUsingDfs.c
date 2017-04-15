@@ -1,11 +1,11 @@
 #include<stdio.h>
 #include<stdlib.h>
 //DFS With dynamic allocation of the variables
-// The transpose function is still not active yet and need to just transpose
 //#include<iostream>
 //using namespace std;
 static int time = 0;
 int *par,*d,*f;
+int b[5][5];
 char *colour;
 void dfs_visit(int i,int n,int a[][n]){
 	colour[i]='G';
@@ -58,9 +58,14 @@ int compare ( const void *pa, const void *pb )
     else
         return a[0] - b[0];
 }
-//void transpose(int n,int a[][n]){
-//    for()
-//}
+void transpose(int n,int a[][n]){
+    int i,j;
+//    int **b;
+//    b= (int **)malloc(n*n*sizeof(int));
+    for(i=0;i<n;i++)
+        for(j=0;j<n;j++)
+            b[i][j]=a[j][i];
+}
 int main()
 {
 //      FILE *fp;
@@ -72,7 +77,7 @@ int main()
       colour = (char *)malloc(n*sizeof(char));
       printf("\n Depth First is :\n");
 	  depth_first(n,a);
-	  int i;
+	  int i,j;
 	  int array[n][2];
     for (i = 0; i < n; i++)
 	{
@@ -84,7 +89,12 @@ int main()
     qsort(array, n, sizeof array[0], compare);
     for(i = n-1;i >=0;--i)
         printf("%2d\n", array[i][1]);
-        depth_first_strongly_connected(n,a,array[1]);
+        transpose(n,a);
+//    int **b=transpose(n,a);
+//    for(i=0;i<n;i++)
+//        for(j=0;j<n;j++)
+//            printf("%d ",b[i][j]);
+    depth_first_strongly_connected(n,b,array[1]);
 
     free(par); free(f); free(d); free(colour);
 return 0;
