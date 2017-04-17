@@ -2,25 +2,27 @@
 #include<stdlib.h>
 #include<string.h>
 #include<math.h>
-//RABIN KARP String matching algorithm, Works only if the mod of negative numbers is positive
+//RABIN KARP String matching algorithm
+int positive_modulo(int i, int n) {
+    return (i % n + n) % n;
+}
 int main()
 {   char t[]="12345";
     char p[]="23";
     int n = strlen(t),m=strlen(p);
-    int d=10,q=13,i,s,ph=0,th=0,f=0;
+    int d=10,q=13,i,s,ph=0,th=0,f=0,k;
     int h=((int)pow(10,m-1))%q;
     for (i=0;i<m;i++){
         //th and ph are hash for text and pattern
-        ph =(d*ph+p[i])%q;
-        th = (d*th+t[i])%q;
+        ph =positive_modulo(d*ph+p[i],q);
+        th = positive_modulo(d*th+t[i],q);
     }
-    int a = -119 % 13;
-    printf("%d ",a);
     for (s=0;s<n-m;s++){
         if(ph==th)
         {   f=1;
+            k=0;
             for (i=s;i<m+s;i++)
-            { if (p[i]!=t[i])
+            { if (p[k++]!=t[i])
                 f=0;
                 break;
             }
@@ -31,7 +33,7 @@ int main()
         }
         else {
             //The problem is here the modulus keep on being negative due to the operation of %
-            th=(d*(th-t[s]*h)+t[s+m])%q;
+            th=positive_modulo((d*(th-t[s]*h)+t[s+m]),q);
         }
     }
     if(f==0)
