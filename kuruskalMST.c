@@ -12,7 +12,7 @@ void kuruskal(edge my[],int n){
 	visited[my[0].a[1]]=1;
 	my[0].t=1;
 	for(i=1;i<n;i++)
-	{ if(visited[my[i].a[0]]==0||visited[my[i].a[0]]==0)
+	{ if(visited[my[i].a[0]]==0||visited[my[i].a[1]]==0)
 		{
 			visited[my[i].a[0]]=1;
 			visited[my[i].a[1]]=1;
