@@ -57,8 +57,7 @@ void BellmanFord(Graph *g,int src){
     //code for negative cycle exist
     for(i=0;i<E;i++){
         Edge e=g->edge[i];
-        if((d[e.dest])>(d[e.src]+e.weight)){
-        (d[e.dest])=(d[e.src]+e.weight);
+        if((dist[e.dest])>(dist[e.src]+e.weight)){
         cout<<"The Graph have a negative cycle";
         return;
     }
