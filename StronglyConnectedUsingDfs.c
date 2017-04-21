@@ -42,10 +42,11 @@ void depth_first_strongly_connected(int n,int a[][n],int b[]){
 	for (i=0;i<n;i++){
 		colour[i]='W';
 		par[i]='-1';
+//		printf("%d",b[i]);
 	}
-	for (i=n;i>=0;i--){
+	for (i=n-1;i>=0;i--){
 		if (colour[b[i]]=='W')
-		{ printf("Strongly Connected are : \n");
+		{ printf("\nStrongly Connected are : ");
 		dfs_visit(b[i],n,a);}
 	}
 }
@@ -68,14 +69,17 @@ void transpose(int n,int a[][n]){
 }
 int main()
 {
-//      FILE *fp;
+      int a[5][5]= {{0,0,1,1,0},
+                    {1,0,0,0,0},
+                    {0,1,0,0,0},
+                    {0,0,0,0,1},
+                    {0,0,0,0,0}};
       int n=5;
-      int a[5][5]= {{0,1,0,0,1},{1,0,1,1,0},{0,1,0,0,1},{0,1,1,0,1},{1,1,0,1,0}};
       par = (int *)malloc(n*sizeof(int));
       d = (int *)malloc(n*sizeof(int));
       f = (int *)malloc(n*sizeof(int));
       colour = (char *)malloc(n*sizeof(char));
-      printf("\n Depth First is :\n");
+      printf("Depth First is :\n");
 	  depth_first(n,a);
 	  int i,j;
 	  int array[n][2];
@@ -85,16 +89,16 @@ int main()
         array[i][1] = i;
     }
 
-    printf("\n Topological Sort is :\n");
+    printf("\nTopological Sort is :\n");
     qsort(array, n, sizeof array[0], compare);
     for(i = n-1;i >=0;--i)
-        printf("%2d\n", array[i][1]);
+        printf("%d\n", array[i][1]);
         transpose(n,a);
 //    int **b=transpose(n,a);
 //    for(i=0;i<n;i++)
 //        for(j=0;j<n;j++)
 //            printf("%d ",b[i][j]);
-    depth_first_strongly_connected(n,b,array[1]);
+    depth_first_strongly_connected(n,b,&array[0]);
 
     free(par); free(f); free(d); free(colour);
 return 0;
