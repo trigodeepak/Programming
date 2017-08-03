@@ -15,3 +15,17 @@ for  i in range(1,n):
 print a
 print b
 #Output is coming now
+#Try this, this works totally fine
+
+###Program for mininmum number of jumps to reach the end
+##a = [2,3,1,1,2,4,2,0,1,1]
+##n = len(a)
+##c = [9999 for i in xrange(n)]
+##c[0] = 0
+##for i in xrange(n):
+##    for j in xrange(i):
+##        if(i<=a[j]+j):
+##            c[i]=min(c[i],c[j]+1)
+##print c
+### The answer is 4 in this case 
+
