@@ -3,8 +3,6 @@ a = 'agbdba'
 a = list(a)
 n = len(a)
 c = [[0 for i in range(n)] for x in range(n)]
-for i in c:
-    print i
 for l in range(n):
     j = l
     i = 0
