@@ -12,4 +12,12 @@ for i in xrange(n):
     c[i] = max_till
 print c
 # The answer is an array showing max span for each stock day.
-#Oh man there is a better solution available that is of O(n) complexity
+# Now for the more optimum solution
+c = [1 for i in xrange(n)]
+for i in xrange(n):
+    for j in xrange(i-1,-1,-1):
+        if(a[i]<a[j]):
+            c[i] = i-j
+            break        
+print c
+
