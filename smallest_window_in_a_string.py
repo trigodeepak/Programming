@@ -1,10 +1,20 @@
 #Program for the smallest window
-a = 'abmmebezedeedzbfjfazdjdje'
-a = list(a)
+##a = 'abmmebezedeedzbfjfazdjdje'
+##a = list(a)
+##l = len(a)
+##b = 'ebdz'
+##b = list(b)
+##n = len(b)
+
+#For paragraph input 
+a = raw_input().split(' ')
 l = len(a)
-b = 'ebdz'
-b = list(b)
-n = len(b)
+n = input()
+b = []
+for i in xrange(n):
+    d = raw_input().strip()
+    b.append(d)
+    
 c = {}
 for i in xrange(n):
     c[b[i]] = 0
