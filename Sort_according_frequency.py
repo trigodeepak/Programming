@@ -11,5 +11,7 @@ b = []
 for i in dict:
     b.append((i,dict[i]))
 b = sorted(b,key=lambda x: x[1],reverse=True)
-#the array is not sorted
-
+a = []
+for i in b:
+    a+= [i[0]]*i[1]
+print a
