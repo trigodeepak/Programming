@@ -1,3 +1,5 @@
+#Actually Logic of this is not correct for correct implementation using heap see
+#https://github.com/trigodeepak/Programming/blob/master/maximum_of_all_subarrays_using_heap.py
 #Program for maximum of all sub arrays 
 a= [1,2,3,1,4,5,2,3,6]
 ##a = [8,5,10,7,9,4,15,12,90,13]
