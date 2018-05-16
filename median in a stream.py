@@ -19,7 +19,7 @@ t = int(input())
 for i in range(t):
     n = int(input())
 ##    a = list(map(int,input().split()))
-    if l1 == 0 or n<med:
+    if l1 == 0 or n<=med:
         heapq.heappush(h_min,-n)
         l1+=1
     elif n>med:
