@@ -1,5 +1,4 @@
-#Median in a stream using 2 heaps the program is running for most of the test cases
-#will figure out the error from another prespective later
+#Median in a stream using 2 heaps 
 def rebalance(h_min,h_max,l1,l2):
     if l1>l2:
         heapq.heappush(h_max,-heapq.heappop(h_min))
@@ -15,10 +14,10 @@ h_max = []
 l1 = 0
 l2 = 0
 med = 0
+
 t = int(input())
 for i in range(t):
     n = int(input())
-##    a = list(map(int,input().split()))
     if l1 == 0 or n<=med:
         heapq.heappush(h_min,-n)
         l1+=1
@@ -28,7 +27,7 @@ for i in range(t):
     if abs(l1-l2) >= 2:
         l1,l2 = rebalance(h_min,h_max,l1,l2)
         
-    #finding median
+    #finding median and printing
     if l1>l2:
         med = -h_min[0]
     elif l1<l2:
