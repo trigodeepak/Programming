@@ -1,25 +1,35 @@
-#python code for matching parenthesis
-a = "[()]{}{[()()]()}"
-a = list(a)
-stack = []
-l = len(a)
-i = 0
-f=0
-while(i<= l-1):
-    print stack,a[i]
-    if a[i] in '{([':
-        stack = [a[i]] + stack
-    elif a[i] == ')' and stack[0] == '(':
-        stack.pop(0)
-    elif a[i] == '}' and stack[0] == '{':
-        stack.pop(0)
-    elif a[i] == ']' and stack[0] == '[':
-        stack.pop(0)
+def result(a,n):
+    #python code for matching parenthesis
+    a = list(a)
+    stack = []
+    l = len(a)
+    f = 0
+    for i in range(l):
+        if a[i] in '{([':
+            stack.append(a[i])
+        elif stack == []:
+            print ("not balanced")
+            return
+        elif a[i] == ')' and stack[-1] == '(' or a[i] == '}' and stack[-1] == '{' or a[i] == ']' and stack[-1] == '[':
+            stack.pop()
+        else:
+            print ("not balanced")
+            return
+        
+    if(stack == []):
+        print ("balanced")
     else:
-        print "failed"
-        f = 1
-        break
-    i+=1
-if(f==0):
-    print "Match brackets"
+        print ("not balanced")
 
+t = int(input())
+for _ in range(t):
+    a = input()
+    n = len(a)
+    (result(a,n))
+
+'''Sample Input
+3
+{([])}
+()
+()[]
+'''
