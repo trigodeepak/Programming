@@ -32,7 +32,7 @@ for i in xrange(l):
             if window > val:
                 window = val
 #To print the window size
-##print window + 1
+print window + 1
 mini = min(c.values())
 maxi = max(c.values())
 for i in xrange(mini,maxi+1):

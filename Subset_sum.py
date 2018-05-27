@@ -1,10 +1,10 @@
 #Program to find subset sum from a given set similar to knapsack
 a = [2,3,7,8,10]
 n=11
-c = [[False for i in xrange(n)]for x in xrange(len(a)+1)]
+c = [[False for i in range(n)]for x in range(len(a)+1)]
 c[0][0] = True
-for i in xrange(1,len(a)+1):
-    for j in xrange(n):
+for i in range(1,len(a)+1):
+    for j in range(n):
         if (j==0):
             c[i][j] = True
         elif(j==a[i-1]):

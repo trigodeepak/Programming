@@ -22,4 +22,3 @@ def printUtil(s,d,a,n):
         d[i]+=1
 printUtil([],d,a,len(a))
 print c
-b = ['((()))', '(()())', '(())()', '()(())', '()()()']

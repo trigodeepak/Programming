@@ -1,5 +1,5 @@
-#Program for stepping numbers using dfs method
-def dfs(n,m,i):
+#Program for stepping numbers using bfs method
+def bfs(n,m,i):
     global res
 ##    print ('the function call is for ',m,n,i)
     q = [i]
@@ -22,7 +22,7 @@ def dfs(n,m,i):
         
 def result(n,m):
     for i in range(10):
-        (dfs(n,m,i))
+        (bfs(n,m,i))
          
 res = []
 t = int(input())
