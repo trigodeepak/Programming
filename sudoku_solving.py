@@ -14,6 +14,7 @@ def check_in_row(row,item):
         return True
     else:
         return False
+    
 def check_in_column(col,item):
     for i in xrange(9):
         if a[i][col] == item:
@@ -23,6 +24,7 @@ def check_in_column(col,item):
 def used_in_box(row,col,item):
     for i in range(3):
         for j in range(3):
+            print(i,j,row,col)
             if(a[i+row][j+col] == item):
                 return True
     return False

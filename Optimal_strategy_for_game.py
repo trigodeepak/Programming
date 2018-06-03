@@ -1,7 +1,7 @@
 #programming for optimal strategy for a game
 a = [3,9,1,2]
 n = len(a)
-c = [[[0,0] for i in xrange(4)]for x in xrange(4)]
+c = [[[0,0] for i in range(4)]for x in range(4)]
 k = 0
 while(k<n):
     i = 0
