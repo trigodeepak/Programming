@@ -1,0 +1,33 @@
+void bottomView(Node *root)
+{   
+    if (root == NULL)  return;
+ 
+    // Create an empty queue for level order tarversal
+    queue<pair <Node *,int>> q;
+    map<int,int> hd;
+ 
+    // Enqueue Root and initialize height
+    q.push(make_pair(root,0));
+    hd[0] = root->data;
+ 
+    while (1)
+    {
+        int nodeCount = q.size();
+        if (nodeCount == 0)
+            break;
+        while (nodeCount > 0)
+        {
+            pair <Node*,int> node = q.front();
+            hd[node.second] = node.first->data;
+            q.pop();
+            if (node.first->left != NULL)
+                q.push(make_pair(node.first->left,node.second-1));
+            if (node.first->right != NULL)
+                q.push(make_pair(node.first->right,node.second+1));
+            nodeCount--;
+        }
+    }
+    for(auto it:hd){
+        cout<<it.second<<" ";
+    }
+}
